@@ -1,0 +1,15 @@
+{
+  "buildCommand": "cd web && npm install && npm run build",
+  "outputDirectory": "web/dist",
+  "functions": {
+    "api/index.py": { "includeFiles": "backend/app/**" }
+  },
+  "rewrites": [
+    { "source": "/health", "destination": "/api/index" },
+    { "source": "/profile/:path*", "destination": "/api/index" },
+    { "source": "/scholarships/:path*", "destination": "/api/index" },
+    { "source": "/matches/:path*", "destination": "/api/index" },
+    { "source": "/deadlines/:path*", "destination": "/api/index" },
+    { "source": "/documents/:path*", "destination": "/api/index" }
+  ]
+}
